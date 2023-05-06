@@ -1,0 +1,119 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const SITE_TITLE = 'Editorconfig generator';
+const SITE_DESCRIPTION = 'Create an editorconfig file via UI';
+
+const { description, title } = Astro.props;
+
+const documentTitle = title
+	? `${title} - ${SITE_TITLE}`
+	: `${SITE_TITLE} - ${SITE_DESCRIPTION}`;
+const documentDescription = description ?? SITE_DESCRIPTION;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content="Get better at JavaScript" />
+		<meta name="theme-color" content="#fefefe" />
+
+		<title>{documentTitle}</title>
+
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:creator" content="@timseverien" />
+		<meta name="twitter:description" content={documentDescription} />
+		<meta name="twitter:dnt" content="on" />
+		<meta name="twitter:title" content={documentTitle} />
+		<meta name="twitter:url" content={Astro.url} />
+
+		<meta property="og:description" content={documentDescription} />
+		<meta property="og:locale" content="en" />
+		<meta property="og:site_name" content={SITE_TITLE} />
+		<meta property="og:title" content={documentTitle} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+
+		<!-- TODO -->
+		<!-- <link rel="alternate" type="application/atom+xml" href="/rss.xml" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="icon" sizes="192x192" href="/favicon.png" /> -->
+
+		<link rel="me" href="https://mastodon.social/@timsev" />
+		<link rel="me" href="https://twitter.com/timseverien" />
+	</head>
+
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--space-3xs: 0.31rem;
+		--space-2xs: 0.63rem;
+		--space-xs: 0.94rem;
+		--space-s: 1.25rem;
+		--space-m: 1.88rem;
+		--space-l: 2.5rem;
+		--space-xl: 3.75rem;
+		--space-2xl: 5rem;
+		--space-3xl: 7.5rem;
+
+		--border-radius-s: var(--space-3xs);
+		--border-radius-m: var(--space-2xs);
+
+		--color-primary: #fc0;
+		--color-secondary: #f0f0f0;
+
+		--input-height: var(--space-m);
+
+		box-sizing: border-box;
+		font-family: system-ui, sans-serif;
+		line-height: 1.6;
+	}
+
+	* {
+		box-sizing: inherit;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		line-height: 1;
+	}
+
+	input[type='text'],
+	select {
+		display: block;
+		height: var(--input-height);
+		width: 100%;
+		padding-inline: var(--space-3xs);
+
+		border: 1px solid #ccc;
+		border-radius: var(--border-radius-s);
+
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: var(--input-height);
+	}
+
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+	}
+
+	input[type='checkbox'] {
+		height: 1em;
+		width: 1em;
+	}
+</style>

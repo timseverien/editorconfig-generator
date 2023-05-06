@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Default.astro';
+import EditorConfigGenerator from '../components/EditorConfigGenerator.svelte';
+---
+
+<Layout>
+	<h1>Editor config generator</h1>
+	<EditorConfigGenerator client:idle />
+</Layout>
