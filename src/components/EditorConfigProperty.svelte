@@ -62,7 +62,7 @@
 		bind:value={property.value}
 	/>
 {:else if property.key === 'insert_final_newline'}
-	<FormLabel forInput={elementId}>Indent style</FormLabel>
+	<FormLabel forInput={elementId}>Insert final newline</FormLabel>
 	<FormInputBoolean id={elementId} bind:value={property.value} />
 {:else if property.key === 'root'}
 	<FormLabel forInput={elementId}>Is root configuration</FormLabel>
