@@ -1,24 +1,9 @@
 {
-    "editorconfig": true,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "importOrder": [
-        "^@layouts",
-        "^@functions",
-        "^@components",
-        "^@stores",
-        "^@styles",
-        "^src/",
-        "^[./]"
-    ],
-    "importOrderSeparation": false,
-    "importOrderSortSpecifiers": true,
-    "overrides": [
-        {
-            "files": [
-                "*.astro"
-            ]
-        }
-    ]
+	"singleQuote": true,
+	"trailingComma": "all",
+	"overrides": [
+		{
+			"files": ["*.astro"]
+		}
+	]
 }
